@@ -1,8 +1,14 @@
 <html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
 <body>
-<div id="details">
+<div id="details" style="text-align: center;"><h3 style="text-decoration: underline;">Map</h3>
 </div>
-<div id="details1"></div>
+<div id="details1" style="text-align: center;"><h3 style="text-decoration: underline;">Map</h3></div>
+<div id="details2" style="text-align: center;"><h3 style="text-decoration: underline;">Hourly Weather Forecast</h3></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script>
 // let reqcount = 0
 
@@ -14,12 +20,12 @@ function showPosition(position) {
 
 //   reqcount++
 //   details.innerHTML = "Accuracy : " + accuracy + "<br>"
-  details.innerHTML += "Latitude:" + latitude + "<br>"
-  details.innerHTML += "Longitude:" + longitude + "<br>"
+  // details.innerHTML += "Latitude:" + latitude + "<br>"
+  // details.innerHTML += "Longitude:" + longitude + "<br>"
 //   details.innerHTML += "Heading:" + heading+ "<br>"
 //   details.innerHTML += "Speed:" + speed+ "<br>"
 //   details.innerHTML += "Altitude:" + altitude+ "<br>"
-  details.innerHTML += '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
+  details.innerHTML += '<iframe width="300" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
 
   lat = latitude;
   lon = longitude;
@@ -33,13 +39,47 @@ function showPosition(position) {
     })
     .then(data => {
         console.log(data)
-        details1.innerHTML += "Approx temperature:" + data.main.temp + "<br>"
-        details1.innerHTML += "Humidity:" + data.main.humidity + "<br>"
-        details1.innerHTML += "Maximum Temperature:" + data.main.temp_max + "<br>"
-        details1.innerHTML += "Minimum Temperature:" + data.main.temp_min + "<br>"
-        details1.innerHTML += "Wind speed:" + data.wind.speed + '<br>'
-        details1.innerHTML += "Wind direction:" + data.wind.deg + 'degrees' + '<br>'
+        details1.innerHTML += "<p>Approx temperature : " + data.main.temp + " deg" + "</p>"
+        details1.innerHTML += "<p>Humidity : " + data.main.humidity + "</p>"
+        details1.innerHTML += "<p>Maximum Temperature : " + data.main.temp_max + " deg" + "</p>"
+        details1.innerHTML += "<p>Minimum Temperature : " + data.main.temp_min + " deg" + "</p>"
+        details1.innerHTML += "<p>Wind speed : " + data.wind.speed + " m/s" + '</p>'
+        details1.innerHTML += "<p>Wind direction : " + data.wind.deg + 'degrees' + '</p>'
     })
+
+    const url = 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly?lat='+lat+'&lon='+lon;
+    const options = {
+        method: 'GET',
+        url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly',
+        params: { units: 'metric' },
+        headers: {
+            'X-RapidAPI-Key': '61d276996cmsh581e695429476d8p1be501jsn60845aa7f8f4',
+            'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
+        }
+    };
+
+    fetch(url, options)
+        .then(res => {
+          return res.json()
+        })
+        .then(data1 => {
+          console.log(data1)
+          for(let i = 0 ; i < 5 ; i ++) {
+            let src1 = 
+            `https://www.weatherbit.io/static/img/icons/${data1.data[i].weather.icon}.png`;
+
+            details2.innerHTML += "<div style='width: 18rem;'>"
+            details2.innerHTML += "<img style='height: 200px; width: 200px;' src='" + src1 + "' class='card-img-top' alt=''>"
+            details2.innerHTML += "<div class='card-body'>"
+            details2.innerHTML += "<h5 class='card-title'>" + data1.data[i].weather.description + "</h5>"
+            details2.innerHTML += "<p class='card-text'>Temperature : " + data1.data[i].app_temp + " deg" +"</p>"
+            details2.innerHTML += "<p class='card-text'>" + data1.data[i].datetime + "</p>"
+            details2.innerHTML += "</div>" 
+            details2.innerHTML += "</div>"
+          }
+        })
+        .catch(err => console.error('error:' + err));
+
 }
 
 // function errorCallback(error) {
