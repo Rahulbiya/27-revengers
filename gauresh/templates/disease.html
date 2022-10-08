@@ -11,22 +11,57 @@
 
 </head>
 
-<body  style="background-color:#f5f5f5;">
+<body  style="background-color: #fffdfdd2;">
 
   
 <!--Navbar-->
 <nav class="navbar bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="../asset/logo_crop1.jpeg" alt="Logo" width="60" height="54" class="d-inline-block align-text-center">
-      <img src="../asset/logo_crop2.jpeg" alt="logo" width="250" height="40" class="d-inline-block align-text-center">
+      <img src="/asset/logo_crop1.jpeg" alt="Logo" width="60" height="54" class="d-inline-block align-text-center">
+      <img src="/asset/logo_crop2.jpeg" alt="logo" width="250" height="40" class="d-inline-block align-text-center">
       
     </a>
   </div>
 </nav>
 <!--end of navbar-->
 
+<h1 align="center">Disease Detection</h1>
+<h2 align="center" style="color:#67cc03;">Here you can upload plant images to detect disease .</h2>
 
+<br>
+<br>
+<br>
+<div align="center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 40px; margin-right: 40px; padding: 20px;">
+
+  <form class="form-signin" method=post enctype=multipart/form-data>
+      
+    <h2 class="h4 mb-3 font-weight-normal"><b>Upload Image</b></h2>
+    <input type="file" name="file" class="form-control-file" id="inputfile" onchange="preview_image(event)" style="font-weight: bold;">
+    <br>
+    <br>
+    <img id="output-image" class="rounded mx-auto d-block" />
+    <br>
+    <br>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-weight: bold;">Predict</button>
+
+
+  </form>
+
+</div>
+
+<!--===script===-->
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
 
 
 <!--bootstrap links-->
