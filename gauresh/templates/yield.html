@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>yield</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan-Seva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
 </head>
-<body>
-<h3>Our Flask Buttons<h3/>
-    <form method="post" action="/yield">
-        <input type="text"  placeholder="Nitrigen" name="Nitrigen"/>
-        <input type="text"  placeholder="Phosphorous" name="Phosphorous"/>
-        <input type="text"  placeholder="Potassium" name="Potassium"/>
-        <input type="text"  placeholder="Temperature" name="Temperature"/>
-        <input type="text"  placeholder="Humidity" name="Humidity"/>
-        <input type="text"  placeholder="PH" name="PH" />
-        <input type="text"  placeholder="Rainfall" name="Rainfall" />
-        <input type="submit" value="yie" name="yi" />
-    </form>
-    <h3>The Suggested Crop for Given Climatic Condition is: {{ value }}<h3>
+
+<body style="background-color: #fffdfdd2;">
+
+
+    <!--Navbar-->
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/asset/logo_crop1.jpeg" alt="Logo" width="60" height="54" class="d-inline-block align-text-center">
+                <img src="/asset/logo_crop2.jpeg" alt="logo" width="250" height="40" class="d-inline-block align-text-center">
+
+            </a>
+        </div>
+    </nav>
+    <!--end of navbar-->
+
+    <h1 align="center">WEED DETECTION</h1>
+    <h2 align="center" style="color:#67cc03;">Here you can upload plant images to detect disease .</h2>
+
+    <br>
+    <br>
+    <br>
+    <div align="center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-left: 40px; margin-right: 40px; padding: 20px;">
+
+        <h3>Our Flask Buttons</h3>
+        <form method="post" action="/yield">
+            <input type="text" placeholder="Nitrogen" name="Nitrigen" />
+            <input type="text" placeholder="Phosphorous" name="Phosphorous" />
+            <input type="text" placeholder="Potassium" name="Potassium" />
+            <input type="text" placeholder="Temperature" name="Temperature" />
+            <input type="text" placeholder="Humidity" name="Humidity" />
+            <input type="text" placeholder="PH" name="PH" />
+            <input type="text" placeholder="Rainfall" name="Rainfall" />
+            <input type="submit" value="yield" name="yi" />
+        </form>
+        <h3>The Suggested Crop for Given Climatic Condition is: {{ value }}</h3>
+
+    </div>
+
+
+
+
+    <!--bootstrap links-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 </body>
+
 </html>
