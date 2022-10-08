@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yield</title>
+</head>
+<body>
+<h3>Our Flask Buttons<h3/>
+    <form method="post" action="/yield">
+        <input type="text"  placeholder="Nitrigen" name="Nitrigen"/>
+        <input type="text"  placeholder="Phosphorous" name="Phosphorous"/>
+        <input type="text"  placeholder="Potassium" name="Potassium"/>
+        <input type="text"  placeholder="Temperature" name="Temperature"/>
+        <input type="text"  placeholder="Humidity" name="Humidity"/>
+        <input type="text"  placeholder="PH" name="PH" />
+        <input type="text"  placeholder="Rainfall" name="Rainfall" />
+        <input type="submit" value="yie" name="yi" />
+    </form>
+    <h3>The Suggested Crop for Given Climatic Condition is: {{ value }}<h3>
+</body>
+</html>
