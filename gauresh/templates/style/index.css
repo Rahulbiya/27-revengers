@@ -1,0 +1,90 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      background-color: #333;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      overflow-y: scroll;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+    }
+  
+    .nav-links li {
+      opacity: 0;
+    }
+  
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  }
+  
+  .nav-active {
+    transform: translateX(0%);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
