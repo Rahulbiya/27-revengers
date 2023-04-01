@@ -1,52 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-}
-
-#details {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-#details1 {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-#details2 {
-    margin-top: 2rem;
+.weather-info {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
-.card {
-    width: 18rem;
-    margin-bottom: 2rem;
+.weather-info p {
+    margin: 0;
 }
 
-.card-img-top {
-    height: 200px;
-    width: 200px;
-    margin: 0 auto;
-}
-
-.card-title {
+.weather-info span {
     font-weight: bold;
-    text-align: center;
-}
-
-.card-text {
-    text-align: center;
+    margin-right: 10px;
 }

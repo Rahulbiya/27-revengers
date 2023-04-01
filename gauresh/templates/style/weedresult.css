@@ -1,0 +1,49 @@
+body {
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: shadow 0.5s ease-out forwards;
+  }
+  
+  .result img {
+    border-radius: 10px;
+    margin: 20px 0;
+    animation: slide-in 0.5s ease-out forwards;
+  }
+  
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  
+  @keyframes shadow {
+    from {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+    }
+    to {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
