@@ -1,3 +1,38 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+}
+.navbar-brand {
+color: #fff;
+}
+
+.carousel-inner img {
+max-height: 500px;
+object-fit: cover;
+}
+
+.card-img-top {
+height: 400px;
+object-fit: cover;
+}
+
+.card-title {
+font-weight: bold;
+color: #565656;
+}
+
+.card-text {
+color: #707070;
+}
+
+.btn-primary {
+background-color: #9f47ff;
+border: none;
+font-weight: bold;
+font-size: 18px;
+}
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -5,7 +40,7 @@
     height: 80px;
     padding: 0 2rem;
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .logo {
