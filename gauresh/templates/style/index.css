@@ -1,6 +1,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
+  
 }
 .navbar-brand {
 color: #fff;
@@ -36,7 +37,7 @@ font-size: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  position: fixed;
   top: 0;
   z-index: 999;
   width: 100%;
@@ -49,17 +50,20 @@ font-size: 18px;
   justify-content: space-between;
   align-items: center;
   width: 40%;
+  list-style-type: none;
 }
+
 .nav-links li a {
   color:#1c2a45;
-  text-decoration: none;
+  text-decoration:none;
   font-size: 20px;
   font-weight: 500;
   padding: 10px;
   transition: all 0.3s ease-in-out;
+  list-style-type: none;
 }
 .nav-links li a:hover {
-  color: #1c2a45;
+  color: #ffffff;
 }
 .logo {
   color: #1c2a45;
@@ -137,4 +141,17 @@ font-size: 18px;
   .hamburger.active .line:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
+}
+
+.backgroundimage>img{
+  background-image: url("../asset/f1.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.5);
+
 }
