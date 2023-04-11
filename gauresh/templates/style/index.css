@@ -143,15 +143,35 @@ font-size: 18px;
   }
 }
 
-.backgroundimage>img{
-  background-image: url("../asset/f1.PNG");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-
-}
-
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.5);
 
 }
+
+.image-container {
+  position: relative; /* Set the parent container to relative */
+  display: inline-block; /* Set the container to inline-block to fit the image size */
+}
+
+.text-overlay {
+  position: absolute; /* Position the text element absolutely */
+  top: 40%; /* Position the text element vertically in the center */
+  left: 20%; /* Position the text element horizontally in the center */
+  transform: translate(-50%, -50%); /* Adjust the position of the text element */
+  text-align: center; /* Center the text horizontally */
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 3.2rem; /* Adjust the font size as needed */
+  line-height: 1.5; /* Set the line height to create space between the lines */
+  color: #1c2a45; /* Set the text color to white to make it more visible on the image */
+  font-family: sans-serif;
+}
+
+img {
+  display: block; /* Set the image to block to remove any default spacing */
+  width: 100%;
+}
+
+
