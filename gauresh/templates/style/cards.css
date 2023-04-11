@@ -1,0 +1,47 @@
+.card-container {
+    display: flex; /* Set the container to a flex container */
+    flex-wrap: wrap; /* Allow the items to wrap onto multiple lines */
+    justify-content: space-between; /* Spread the cards evenly across the container */
+    padding: 20px; /* Add some padding to the container */
+  }
+  
+  .card {
+    width: calc(25% - 20px); /* Set the width of each card to 25% of the container minus some padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect to each card */
+    border-radius: 10px; /* Add some rounded corners to each card */
+    overflow: hidden; /* Hide any overflowing content */
+    margin-bottom: 20px; /* Add some spacing between the cards */
+  }
+  
+  .card img {
+    width: 100%; /* Set the image to fill the entire width of the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Scale the image to fit the container while preserving its aspect ratio */
+  }
+  
+  .card h3 {
+    margin: 20px; /* Add some spacing between the title and the text */
+    font-size: 1.2rem; /* Set the font size for the title */
+    text-align: center; /* Center the title horizontally */
+  }
+  
+  .card p {
+    margin: 20px; /* Add some spacing between the text and the button */
+    text-align: justify; /* Justify the text */
+  }
+  
+  .card button {
+    display: block; /* Set the button to a block element to fill the width of the card */
+    margin: 0 auto 20px; /* Center the button horizontally and add some spacing below */
+    padding: 10px 20px; /* Add some padding to the button */
+    background-color: #4CAF50; /* Set the background color of the button /
+    color: white; / Set the text color of the button /
+    border: none; / Remove the button border /
+    border-radius: 5px; / Add some rounded corners to the button /
+    cursor: pointer; / Change the cursor to a pointer when hovering over the button /
+    transition: background-color 0.3s; / Add a transition effect to the background color */
+    }
+    
+    .card button:hover {
+    background-color: #3e8e41; /* Change the background color of the button when hovering over it */
+    }  

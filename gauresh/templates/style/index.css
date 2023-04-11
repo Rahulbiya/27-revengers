@@ -148,6 +148,8 @@ font-size: 18px;
 
 }
 
+
+
 .image-container {
   position: relative; /* Set the parent container to relative */
   display: inline-block; /* Set the container to inline-block to fit the image size */
@@ -174,4 +176,25 @@ img {
   width: 100%;
 }
 
+
+.image-container2 {
+  position: relative; /* Set the parent container to relative */
+  display: inline-block; /* Set the container to inline-block to fit the image size */
+}
+
+.text-overlay2 {
+  position: absolute; /* Position the text element absolutely */
+  top: 40%; /* Position the text element vertically in the center */
+  left: 75%; /* Position the text element horizontally in the center */
+  transform: translate(-50%, -50%); /* Adjust the position of the text element */
+  text-align: center; /* Center the text horizontally */
+}
+
+.bold-text2 {
+  font-weight: bold;
+  font-size: 2.2rem; /* Adjust the font size as needed */
+  line-height: 1.5; /* Set the line height to create space between the lines */
+  color: #1c2a45; /* Set the text color to white to make it more visible on the image */
+  font-family: sans-serif;
+}
 
